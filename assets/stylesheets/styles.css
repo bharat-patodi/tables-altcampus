@@ -14,12 +14,15 @@ Variables
 
 :root {
   --gym-red: #ED563A;
+  --gym-black-hue: rgba(38, 38, 38, 0.7);
+  --font-size-4down: 0.6em;
+  --font-size-3down: 0.7em;
   --font-size-2down: 0.8em;
   --font-size-1down: 0.9em;
   --font-base-size: 16px;
   --font-size-1up: 1.2em;
   --font-size-2up: 1.4em;
-  --font-size-3up: 1.6em;
+  --font-size-3up: 3.2em;
 }
 
 /* ---------------------------------------------------------------
@@ -34,16 +37,32 @@ body {
   margin: 0 auto;
 }
 
-h1 {
-  font-size: var(--font-size-4up);
+h1, h2, h3 {
+    color: white;
+    font-weight: 900;
 }
 
-h2 {
+h1 {
   font-size: var(--font-size-3up);
 }
 
+h2 {
+  font-size: var(--font-size-1up);
+  color: black;
+}
+
 h3 {
-  font-size: var(--font-size-2up);
+  font-size: var(--font-size-1up);
+}
+
+h4 {
+    font-size: var(--font-base-size);
+    font-weight: 700;
+}
+
+p {
+    font-size: var(--font-size-3down);
+    color: rgb(88, 88, 88);
 }
 
 label, input {
@@ -57,50 +76,377 @@ Modular Classes
 .container {
   max-width: 100ch;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .red-text {
   color: var(--gym-red);
 }
 
-.red-background {
-  background-color: var(--gym-red);
+.white-text {
+  color: white;
 }
 
-/* ---------------------------------------------------------------
-Project Specific Styles
---------------------------------------------------------------- */
+.black-text {
+    color: black;
+}
 
+.uppercase {
+    text-transform: uppercase;
+}
+
+.heavy {
+    font-weight: 700;
+}
+
+.small {
+    font-size: var(--font-size-4down);
+}
+
+.extra-heavy {
+    font-weight: 900;
+}
+
+.float {
+    float: left;
+    margin-right: 20px;
+    height: 80%;
+}
+
+/* Clearfix */
+.clearfix::after,
+.clearfix::before {
+    content: '';
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.subtitle {
+    color: white;
+    font-size: var(--font-size-2down);
+    font-weight: 700;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.two-column {
+    flex: 40%;
+    margin-top: 20px;
+}
+
+.col-50 {
+    flex: 0 1 50%;
+}
+
+.col-40 {
+    flex: 0 1 36%;
+}
+
+.col-60 {
+    flex: 0 1 58%;
+}
+
+.three-column {
+    flex: 0 1 32%;
+}
+
+a {
+    font-size: var(--font-size-4down);
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .5px;
+    display: inline-block;
+}
+
+a.btn {
+    padding: 10px 10px;
+    background-color: var(--gym-red);
+}
 
 /* ---------------------------------------------------------------
 Header
 --------------------------------------------------------------- */
 
 header {
-  background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(105, 105, 105, 0.6);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-.logo {
-
+#logo {
+    font-size: var(--font-size-2up);
 }
 
-header .container {
-  justify-content: space-between;
+.primary-nav ul li a {
+    margin-right: 20px;
+    font-size: var(--font-size-4down);
 }
 
-header a {
-  text-decoration: none;
-  color: white;
+.hero {
+    text-align: center;
+    text-transform: uppercase;
 }
 
-header nav li {
-  margin-right: 15px;
+.relative-pos {
+    position: relative;
 }
 
-header a:last-child {
-  margin-right: 0;
+video {
+    width: 100%;
+}
+
+.hero {
+    background-color: var(--gym-black-hue);
+    padding: 20px;
+    width: 100%;
+    height: 99.5%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hero-text {
+    position: relative;
+    top: 250px;
+}
+
+.hero-text > * {
+    margin: 20px;
+}
+
+.section-heading {
+    width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    text-transform: uppercase;
+}
+
+.section-heading * {
+    margin: 5px auto;
+}
+
+.choose-program {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.choose-program-info .two-column div > * {
+    margin-bottom: 5px;
+}
+
+.choose-program-info a {
+    color: var(--gym-red);
+}
+
+.choose-program-info .blue-text {
+    color: cornflowerblue;
+    font-size: var(--font-size-1down);
+    text-transform: capitalize;
+}
+
+.banner {
+    background-image: url(../images/cta-bg.jpg);
+    padding: 60px;
+}
+
+.banner-content {
+    padding: 20px 100px;
+    text-align: center;
+}
+
+.banner-content * {
+    margin: 20px auto;
+}
+
+.features,
+.schedule,
+.instructors {
+    margin: 60px auto;
+}
+
+.col-40 li {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(30, 30, 30, 0.1);
+}
+
+.col-40 li * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.col-40 a {
+    font-size: var(--font-size-2down);
+    width: 100%;
+    padding: 20px 50px;
+    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.col-60 {
+    margin: 20px 0;
+}
+
+.col-60 img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.col-60 * {
+    margin-bottom: 15px;
+}
+
+.col-40 img {
+    width: 10%;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.schedule {
+    padding: 60px 0;
+    background: url(../images/schedule-bg.jpg);
+}
+
+.schedule nav,
+table {
+    margin: 50px auto;
+}
+
+.schedule nav li {
+    margin: 5px;
+}
+
+.schedule nav a,
+.schedule nav li {
+    /* margin: 0 10px; */
+    font-size: var(--font-size-1down);
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.schedule nav a.red-text {
+    color: var(--gym-red);
+}
+
+table,
+th,
+td {
+    border: 2px solid #fff;
+    border-collapse: collapse;
+    color: #fff;
+    font-size: var(--font-size-2down);
+    padding: 30px 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.instructor {
+    padding: 20px;
+    box-shadow: 0 0 10px 5px rgba(59, 59, 59, 0.15);
+}
+
+.instructor * {
+    margin: 5px 0;
+}
+
+.instructor img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.instructor h4,
+.social-account-trainer a {
+    color: rgb(24, 23, 23);
+    font-size: 20px;
+}
+
+.instructor span {
+    font-size: var(--font-size-1down);
+}
+
+.instructor h4 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.social-account-trainer li {
+    margin-right: 20px;
+}
+
+.form {
+    background: url(../images/contact-bg.jpg) no-repeat;
+    background-size: cover;
+    padding: 60px;
+}
+
+form {
+    background: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+input,
+textarea {
+    font-family: inherit;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+input[name="name"],
+input[name="email"] {
+    width: 41%;
+    margin: 12px 4%;
+    padding: 12px;
+}
+
+input[name="subject"],
+textarea {
+    width: 91%;
+    margin: 12px 2% 12px 4%;
+    padding: 12px;
+}
+
+form a {
+    margin: 15px 4%;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: black;
+}
+
+footer a {
+    font-size: var(--font-size-1down);
+    text-transform: capitalize;
 }
